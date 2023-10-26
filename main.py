@@ -48,11 +48,9 @@ for t in topicsList:
 from langchain.document_loaders import TextLoader
 documents = []
 
-for file in os.listdir("docs"):
-    if file.endswith('.txt'):
-        text_path = "./docs/" + file
-        loader = TextLoader(text_path)
-        documents.extend(loader.load())
+text_path = "base.txt"
+loader = TextLoader(text_path)
+documents.extend(loader.load())
 
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=10)
 chunked_documents = text_splitter.split_documents(documents)
@@ -206,3 +204,8 @@ if __name__ == '__main__':
             st.warning('Please enter your OpenAI API key!', icon='⚠')
         if submitted and openai_api_key.startswith('sk-'):
             generate_response(text)
+
+    for k, v in topics.items():
+    print(
+      f"({k}) {v.description} : {v.value}"
+    )      
