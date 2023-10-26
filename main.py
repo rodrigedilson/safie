@@ -19,7 +19,7 @@ import requests
 
 # OpenAi Key
 #
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = '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'
 
 class Topic:                     # Topic class
   def __init__(self, name, description, value = None, mandatory = True):          # constructor
