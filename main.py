@@ -206,6 +206,6 @@ if __name__ == '__main__':
             generate_response(text)
 
     for k, v in topics.items():
-    print(
-      f"({k}) {v.description} : {v.value}"
-    )      
+      print(
+        f"({k}) {v.description} : {v.value}"
+      )      
